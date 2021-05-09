@@ -41,4 +41,4 @@ PUT /usuario-index
 
 ## Add Users to Created Index
 
-* Use the collection and call add-user or add-users method to add new index
+* Use the collection and call add-user or add-users method to add new document
