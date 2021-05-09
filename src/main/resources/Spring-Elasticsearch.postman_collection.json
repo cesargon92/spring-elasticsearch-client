@@ -1,0 +1,153 @@
+{
+	"info": {
+		"_postman_id": "b9370c98-e8a5-4710-aee5-9f957f89fe36",
+		"name": "Spring-Elasticsearch",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "add-users",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"nombreUsuario\": \"Fernanda Perez\",\r\n        \"edad\": 23,\r\n        \"genero\": \"Femenino\",\r\n        \"cantidadVeces\": 5,\r\n        \"tieneTrabajo\": false\r\n    },\r\n    {\r\n        \"nombreUsuario\": \"Fernando Perez\",\r\n        \"edad\": 45,\r\n        \"genero\": \"Masculino\",\r\n        \"cantidadVeces\": 4,\r\n        \"tieneTrabajo\": true\r\n    },\r\n    {\r\n        \"nombreUsuario\": \"Johanna Doe\",\r\n        \"edad\": 50,\r\n        \"genero\": \"Femenino\",\r\n        \"cantidadVeces\": 3,\r\n        \"tieneTrabajo\": false\r\n    },\r\n    {\r\n        \"nombreUsuario\": \"Maria Josefa\",\r\n        \"edad\": 50,\r\n        \"genero\": \"Femenino\",\r\n        \"cantidadVeces\": 4,\r\n        \"tieneTrabajo\": true\r\n    },\r\n    {\r\n        \"nombreUsuario\": \"Juan Gonzalez\",\r\n        \"edad\": 29,\r\n        \"genero\": \"Masculino\",\r\n        \"cantidadVeces\": 4,\r\n        \"tieneTrabajo\": true\r\n    },\r\n    {\r\n        \"nombreUsuario\": \"Karen Gomez\",\r\n        \"edad\": 27,\r\n        \"genero\": \"Femenino\",\r\n        \"cantidadVeces\": 0,\r\n        \"tieneTrabajo\": true\r\n    },\r\n    {\r\n        \"nombreUsuario\": \"Sonia Perez\",\r\n        \"edad\": 60,\r\n        \"genero\": \"Femenino\",\r\n        \"cantidadVeces\": 3,\r\n        \"tieneTrabajo\": false\r\n    },\r\n    {\r\n        \"nombreUsuario\": \"Andrea Toledo\",\r\n        \"edad\": 30,\r\n        \"genero\": \"Femenino\",\r\n        \"cantidadVeces\": 0,\r\n        \"tieneTrabajo\": true\r\n    },\r\n    {\r\n        \"nombreUsuario\": \"Valeska Montecinos\",\r\n        \"edad\": 56,\r\n        \"genero\": \"Femenino\",\r\n        \"cantidadVeces\": 1,\r\n        \"tieneTrabajo\": true\r\n    },\r\n    {\r\n        \"nombreUsuario\": \"Roberto Cereceda\",\r\n        \"edad\": 35,\r\n        \"genero\": \"Masculino\",\r\n        \"cantidadVeces\": 7,\r\n        \"tieneTrabajo\": true\r\n    }\r\n]\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/usuarios-rest/add-users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios-rest",
+						"add-users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add-user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombreUsuario\": \"prueba1\",\r\n    \"edad\": 12,\r\n    \"genero\": \"Masculino\",\r\n    \"cantidadVeces\": 4,\r\n    \"tieneTrabajo\": true\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/usuarios-rest/add-user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios-rest",
+						"add-user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "usuarios deporte 0",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/usuarios-rest/usuarios?cantidadVeces=0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios-rest",
+						"usuarios"
+					],
+					"query": [
+						{
+							"key": "cantidadVeces",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "usuarios deporte sobre 3 edad sobre 40",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/usuarios-rest/get-usuarios?cantidadVecesSobre=3&edadSobre=12",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios-rest",
+						"get-usuarios"
+					],
+					"query": [
+						{
+							"key": "cantidadVecesSobre",
+							"value": "3"
+						},
+						{
+							"key": "edadSobre",
+							"value": "12"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "usuarios deporte sobre 3 genero femenino",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/usuarios-rest/get-usuarios-genero?cantidadVecesSobre=3&genero='Femenino'",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios-rest",
+						"get-usuarios-genero"
+					],
+					"query": [
+						{
+							"key": "cantidadVecesSobre",
+							"value": "3"
+						},
+						{
+							"key": "genero",
+							"value": "'Femenino'"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
