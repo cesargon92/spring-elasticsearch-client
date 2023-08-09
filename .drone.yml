@@ -1,11 +1,9 @@
----
 kind: pipeline
-type: docker
 name: default
 
 steps:
-- name: backend
-  image: java
+- name: test
+  image: maven:3-jdk-10
   commands:
-  - mvn clean install
-  - mvn test
+  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+  - mvn test -B
