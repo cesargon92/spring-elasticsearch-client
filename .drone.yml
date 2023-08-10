@@ -17,6 +17,7 @@ steps:
   commands:
     - az login --service-principal -u $AZURE_APPLICATION_ID -p $AZURE_SECRET --tenant $AZURE_TENANT_ID
     - az acr login -n dronecr --expose-token
+    - docker push dronecr.azurecr.io/spring-elasticsearch-client
   
 - name: docker  
   image: plugins/acr
