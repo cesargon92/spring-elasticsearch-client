@@ -31,7 +31,7 @@ steps:
 #    repo: spring-elasticsearch-client
 #  commands:
 #    - curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
-- name: test
-  image: alpine
-  commands:
-  - curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+#- name: test
+#  image: alpine
+#  commands:
+#  - curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
