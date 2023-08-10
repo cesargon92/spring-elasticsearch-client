@@ -18,6 +18,11 @@ steps:
   commands:
     - az login --service-principal -u $AZURE_APPLICATION_ID -p $AZURE_SECRET --tenant $AZURE_TENANT_ID
     - az acr login -n dronecr --expose-token
+    - aks install-cli
+    - az account set --subscription bb329e6f-49f4-437c-9bad-544bb2b63a12
+    - az aks get-credentials --resource-group drone-rg --name aks-drone
+    - kubectl get deployments --all-namespaces=true
+    - echo "Aquí va el kubectl apply"
   
 - name: docker
   image: docker
