@@ -1,9 +1,22 @@
 kind: pipeline
 name: default
 
+#steps:
+#- name: test
+#  image: maven:3-jdk-10
+#  commands:
+#  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+#  - mvn test -B
+
 steps:
-- name: test
-  image: maven:3-jdk-10
-  commands:
-  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
-  - mvn test -B
+- name: build-java-app
+  image: docker.io/kameshsampath/drone-java-maven-plugin:v1.0.0
+  pull: if-not-exists
+
+- name: docker  
+  image: plugins/acr
+  settings:
+    registry: dronecr.azurecr.io
+    service_principal_client_id: f562782f-f00d-40bf-b4c8-88a3af4f3090
+    service_principal_client_secret: k318Q~O.A~0h5lvwWznfHKTeZW6s-oVq-kgvtaFM
+    repo: drone/poc
