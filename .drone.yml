@@ -20,6 +20,6 @@ steps:
     - az acr login -n dronecr --expose-token
   
 - name: docker
-  image: plugins/docker
+  image: docker
   commands:
     - docker push dronecr.azurecr.io/spring-elasticsearch-client
