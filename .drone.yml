@@ -16,6 +16,7 @@ steps:
     AZURE_TENANT_ID: '58890a1b-1e36-4669-b0e5-71d700ffad22'
   commands:
     - az login --service-principal -u $AZURE_APPLICATION_ID -p $AZURE_SECRET --tenant $AZURE_TENANT_ID
+    - az acr login --name dronecr
   
 - name: docker  
   image: plugins/acr
@@ -24,9 +25,3 @@ steps:
     service_principal_client_id: f562782f-f00d-40bf-b4c8-88a3af4f3090
     service_principal_client_secret: k318Q~O.A~0h5lvwWznfHKTeZW6s-oVq-kgvtaFM
     repo: spring-elasticsearch-client
-  environment:
-    AZURE_APPLICATION_ID: 'f562782f-f00d-40bf-b4c8-88a3af4f3090'
-    AZURE_SECRET: 'k318Q~O.A~0h5lvwWznfHKTeZW6s-oVq-kgvtaFM'
-    AZURE_TENANT_ID: '58890a1b-1e36-4669-b0e5-71d700ffad22'
-  commands:
-    - az login --service-principal -u $AZURE_APPLICATION_ID -p $AZURE_SECRET --tenant $AZURE_TENANT_ID
