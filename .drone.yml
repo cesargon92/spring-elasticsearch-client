@@ -1,17 +1,16 @@
 kind: pipeline
 name: default
 
-#steps:
-#- name: test
-#  image: maven:3-jdk-10
-#  commands:
-#  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
-#  - mvn test -B
-
 steps:
-- name: build-java-app
-  image: docker.io/kameshsampath/drone-java-maven-plugin:v1.0.0
-  pull: if-not-exists
+- name: test
+  image: maven:3-jdk-10
+  commands:
+  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+
+#steps:
+#- name: build-java-app
+#  image: docker.io/kameshsampath/drone-java-maven-plugin:v1.0.0
+#  pull: if-not-exists
 
 - name: docker  
   image: plugins/acr
