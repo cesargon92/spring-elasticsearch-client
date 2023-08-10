@@ -15,7 +15,7 @@ steps:
     AZURE_SECRET: 'k318Q~O.A~0h5lvwWznfHKTeZW6s-oVq-kgvtaFM'
     AZURE_TENANT_ID: '58890a1b-1e36-4669-b0e5-71d700ffad22'
   commands:
-    - az login --service-principal -u $AZURE_APPLICATION -p $AZURE_SECRET --tenant $AZURE_TENANT_ID
+    - az login --service-principal -u $AZURE_APPLICATION_ID -p $AZURE_SECRET --tenant $AZURE_TENANT_ID
   
 - name: docker  
   image: plugins/acr
