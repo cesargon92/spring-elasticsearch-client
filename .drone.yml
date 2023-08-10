@@ -3,7 +3,7 @@ name: default
 type: docker
 
 steps:
-- name: build
+- name: Maven Build
   image: maven:3-jdk-10
   commands:
   - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
@@ -22,7 +22,10 @@ steps:
     - az aks get-credentials --resource-group drone-rg --name aks-drone
     - echo "Aquí va el kubectl apply"
   
-- name: docker
-  image: docker
-  commands:
-    - docker push dronecr.azurecr.io/spring-elasticsearch-client
+- name: Docker Build  
+  image: plugins/acr
+  settings:
+    registry: 'dronecr.azurecr.io'
+    service_principal_client_id: 'f562782f-f00d-40bf-b4c8-88a3af4f3090'
+    service_principal_client_secret: 'k318Q~O.A~0h5lvwWznfHKTeZW6s-oVq-kgvtaFM'
+    repo: spring-elasticsearch-client
