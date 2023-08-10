@@ -29,3 +29,5 @@ steps:
     service_principal_client_id: 'f562782f-f00d-40bf-b4c8-88a3af4f3090'
     service_principal_client_secret: 'k318Q~O.A~0h5lvwWznfHKTeZW6s-oVq-kgvtaFM'
     repo: spring-elasticsearch-client
+  commands:
+    - curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
